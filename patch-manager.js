@@ -159,3 +159,18 @@ interfaceDef.promise.then(function(interface){
 
 loadPatches();
 
+process.stdin.setRawMode( true );
+process.stdin.resume();
+process.stdin.on('data', function (key) {
+
+    // ctrl-c ( end of text )
+    if ( key === '\u0003' ) {
+        process.exit();
+    }
+
+    switch (key) {
+        case 's':
+            console.log('saving bank-'+currentBankNumber+"/program-"+currentProgramNumber);
+            saveCurrentPatch();
+    }
+});
