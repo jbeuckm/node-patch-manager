@@ -55,6 +55,11 @@ function handleProgramChange(message) {
 function loadPatches() {
 
     fs.readdir(__dirname + '/data', function (err, files) {
+
+        if (err) {
+            console.log(err);
+        }
+
         files.filter(function (file) {
             return file.substr(-5) === '.json';
         })
@@ -137,13 +142,15 @@ else {
             interfaceDef.reject(err);
         }
         else {
-            interfaceDef.resolve(result);
+            console.log(result);
+            interfaceDef.resolve(result.interface);
         }
     });
 }
 
 interfaceDef.promise.then(function(interface){
 
+    console.log("opening MIDI in "+interface);
     input.openPort(parseInt(interface));
 // Sysex, timing, and active sensing
     input.ignoreTypes(false, true, false);

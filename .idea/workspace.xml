@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00149078-b11c-4ae5-8563-5686b0242af1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/bank0.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/programs.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/patch-manager.js" afterPath="$PROJECT_DIR$/patch-manager.js" />
     </list>
     <ignored path="Patch Manager.iws" />
@@ -41,7 +36,7 @@
       <file leaf-file-name="patch-manager.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/patch-manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="26" selection-start="279" selection-end="279" vertical-scroll-proportion="0.28805238">
+            <state line="152" column="46" selection-start="3214" selection-end="3214" vertical-scroll-proportion="0.7594108">
               <folding />
             </state>
           </provider>
@@ -391,7 +386,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/patch-manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="279" selection-end="279" vertical-scroll-proportion="0.28805238">
+        <state line="152" column="46" selection-start="3214" selection-end="3214" vertical-scroll-proportion="0.7594108">
           <folding />
         </state>
       </provider>
