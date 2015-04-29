@@ -148,9 +148,9 @@ else {
     });
 }
 
-interfaceDef.promise.then(function(interface){
+interfaceDef.promise.then(function (interface) {
 
-    console.log("opening MIDI in "+interface);
+    console.log("opening MIDI in " + interface);
     input.openPort(parseInt(interface));
 // Sysex, timing, and active sensing
     input.ignoreTypes(false, true, false);
@@ -159,18 +159,33 @@ interfaceDef.promise.then(function(interface){
 
 loadPatches();
 
-process.stdin.setRawMode( true );
-process.stdin.resume();
-process.stdin.on('data', function (key) {
 
-    // ctrl-c ( end of text )
-    if ( key === '\u0003' ) {
-        process.exit();
-    }
 
-    switch (key) {
-        case 's':
-            console.log('saving bank-'+currentBankNumber+"/program-"+currentProgramNumber);
-            saveCurrentPatch();
-    }
-});
+
+function listenForKeys() {
+    var keypress = require('keypress');
+
+// make `process.stdin` begin emitting "keypress" events
+    keypress(process.stdin);
+
+// listen for the "keypress" event
+    process.stdin.on('keypress', function (ch, key) {
+
+
+        // ctrl-c ( end of text )
+        if (key === '\u0003') {
+            process.exit();
+        }
+
+        switch (key && key.name) {
+            case 's':
+                console.log('saving bank-' + currentBankNumber + "/program-" + currentProgramNumber);
+                saveCurrentPatch();
+        }
+
+    });
+
+}
+
+listenForKeys();
+
